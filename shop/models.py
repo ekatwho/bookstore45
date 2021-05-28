@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 # from django.contrib.auth.models import User
 
+
 class Post(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -20,6 +21,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-publish',)
+
     def __str__(self):
         return self.title
 
@@ -62,7 +64,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-    description = models.TextField(blank=True)
+    stock = models.DecimalField(max_digits=10, decimal_places=0)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -70,6 +72,8 @@ class Product(models.Model):
 
     class Meta:
         ordering = ('name',)
+        verbose_name = 'Book'
+        verbose_name_plural = 'Books'
         index_together = (('id', 'slug'),)
 
     def __str__(self):
@@ -78,3 +82,19 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
+
+
+class Vendor(models.Model):
+    id = models.AutoField(primary_key=True, help_text='Код поставщика')
+    name = models.CharField(max_length=200, db_index=True)
+    city = models.CharField(max_length=200, db_index=True)
+    phone = models.CharField(max_length=20, db_index=True)
+    email = models.EmailField()
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Vendor'
+        verbose_name_plural = 'Vendors'
+
+    def __str__(self):
+        return self.name

@@ -48,18 +48,16 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
-    return render(request,
-                  'shop/product/detail.html',
-                  {'product': product})
-
     cart_product_form = CartAddProductForm()
     return render(request,
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
 
-# def deli(request):
-#     return render(request, 'shop/deli.html')
 
-# def about(request):
-#     return render(request, 'shop/about.html')
+def delivery(request):
+    return render(request, 'product/delivery.html')
+
+
+def about(request):
+    return render(request, 'product/about.html')
