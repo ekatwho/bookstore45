@@ -56,8 +56,20 @@ def product_detail(request, id, slug):
 
 
 def delivery(request):
-    return render(request, 'product/delivery.html')
+    return render(request, 'shop/delivery.html')
 
 
 def about(request):
-    return render(request, 'product/about.html')
+    return render(request, 'shop/about.html')
+
+
+def login(request):
+    return render(request, 'shop/login.html')
+
+
+def register(request):
+    return render(request, 'account/account/register.html')
+
+
+def register_done(request):
+    return render(request, 'shop/register_done.html')

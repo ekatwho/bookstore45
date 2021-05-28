@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import Category, Product, Post, Comment, Vendor
+from .models import Category, Product, Post, Vendor
 
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'publish', 'status')
 
 
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'post', 'created', 'active')
-    list_filter = ('active', 'created', 'updated')
-    search_fields = ('name', 'email', 'body')
+# class CommentAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'email', 'post', 'created', 'active')
+#     list_filter = ('active', 'created', 'updated')
+#     search_fields = ('name', 'email', 'body')
 
 
 @admin.register(Category)
