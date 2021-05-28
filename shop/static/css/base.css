@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-family: helvetica, sans-serif;
     background-size: 1500px 920px;
-    background-image: url("/media/products/2021/05/03/b2.png");
+    background-image: url("/media/products/2021/05/03/b2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -13,6 +13,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
+    color: black;
 }
 
 a {
@@ -68,10 +69,10 @@ table {
     /*margin: auto;*/
     border-spacing: 0;
     border-collapse: collapse;
-    /*margin-bottom: 100%;*/
-    left: 0; bottom: 0;
-    position:absolute;
-    margin-bottom: 60px;
+    /*left: 0;*/
+    /*bottom: 0;*/
+/*    position:absolute;*/
+    margin-top: 120px;
 }
 
 table th, table td {
@@ -82,7 +83,8 @@ table th, table td {
 }
 
 tbody tr:nth-child(odd) {
-    background: #D4AB7D;
+    background: white;
+    color: black;
 }
 
 tbody tr.subtotal {
@@ -90,8 +92,8 @@ tbody tr.subtotal {
 }
 
 thead th, tbody tr.total {
-    background: #D4AB7D;
-    color: #fff;
+    background: #fff;
+    color: black;
     font-weight: bold;
 }
 
@@ -100,7 +102,7 @@ table.cart {
 }
 
 table.cart img {
-    width: 180px;
+    width: 140px;
 }
 
 tbody td.num {
@@ -183,7 +185,7 @@ ul.errorlist {
     float: right;
     padding-top: 4px;
     text-align:right;
-    background-color: #D4AB7D;
+    background-color: white;
 }
 
 #content {
@@ -262,9 +264,14 @@ ul.errorlist {
 
 .product-detail {
     text-align: justify;
-    margin-left: 90px;
-    margin-right: 90px;
-    background-image: url("/media/products/2021/05/03/b2.png");
+    /*margin-left: 90px;*/
+    /*margin-right: 90px;*/
+    /*background-сolor: white;*/
+    border: 1px #D4AB7D solid;
+    background-color: white;
+    /*margin: 5px;*/
+    padding:50px;
+    /*width:200px;*/
 }
 
 .product-detail .price {
@@ -405,8 +412,9 @@ form div.field {
 	/*padding-right: 100px;*/
     /*position:absolute;*/
     font-family: roboto;
-    left: 0; bottom: 0;
+    left: 0;
+    bottom: 0;
     position:fixed;
-   height:30px;
-   width:100%;
+   /*height:30px;*/
+    width:100%;
 }
