@@ -21,7 +21,9 @@
         {% if cart|length > 0 %}
         В корзине:
         <a href="{% url 'cart:cart_detail' %}" style="color:white">
-            {{ total_items }} {{ total_items|pluralize }},
+            {{ total_items }} шт
+<!--            {{ total_items|pluralize }}-->
+            ,
             {{ cart.get_total_price }}&nbspруб
         </a>
         {% else %}
@@ -35,7 +37,7 @@
     {% endblock %}
 </div>
 <table>
-    <tr class="footer">
+    <tr class="footer"  style="background-color: #D4AB7D; color: white">
         <td> Адрес: Барнаул, ул. Ленина, 76</td>
         <td> Тел.: 8-800-555-35-35</td>
     </tr>
