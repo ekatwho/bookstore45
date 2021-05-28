@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderItem
+from .models import Delivery, Payment, Order, OrderItem
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
@@ -42,12 +42,23 @@ class OrderItemInline(admin.TabularInline):
     raw_id_fields = ['product']
 
 
+@admin.register(Delivery)
+class DeliveryAdmin(admin.ModelAdmin):
+    list_display = ['d_type', 'd_price']
+
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ['p_type']
+
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email',
-                    'address', 'postal_code', 'city', 'paid',
-                    'created', 'updated', order_detail]
-    list_filter = ['paid', 'created', 'updated']
+    list_display = ['first_name', 'last_name', 'email', 'city',
+                    'address',
+                    'ord_check_time',
+                    ]
+    list_filter = ['paid', 'created']
     inlines = [OrderItemInline]
     actions = [export_to_csv]
 
