@@ -10,10 +10,3 @@ class Migration(migrations.Migration):
         ('orders', '0007_auto_20210523_1252'),
     ]
 
-    operations = [
-        migrations.AlterField(
-            model_name='order',
-            name='d_id',
-            field=models.ForeignKey(default=False, help_text='Код доставки', on_delete=django.db.models.deletion.CASCADE, to='orders.delivery'),
-        ),
-    ]

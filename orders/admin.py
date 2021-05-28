@@ -54,10 +54,10 @@ class PaymentAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'city',
+    list_display = ['id', 'email', 'city',
                     'address',
-                    'ord_check_time',
-                    ]
+                    'paid',
+                    'ord_check_time']
     list_filter = ['paid', 'created']
     inlines = [OrderItemInline]
     actions = [export_to_csv]

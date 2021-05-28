@@ -16,28 +16,6 @@ class Migration(migrations.Migration):
                 ('p_id', models.AutoField(default=1, help_text='Код доставки', primary_key=True, serialize=False)),
                 ('p_type', models.CharField(max_length=50)),
             ],
-        ),
-        migrations.RemoveField(
-            model_name='order',
-            name='id',
-        ),
-        migrations.RemoveField(
-            model_name='orderitem',
-            name='id',
-        ),
-        migrations.AddField(
-            model_name='order',
-            name='o_id',
-            field=models.AutoField(default=1, primary_key=True, serialize=False),
-        ),
-        migrations.AddField(
-            model_name='orderitem',
-            name='oi_id',
-            field=models.AutoField(default=1, primary_key=True, serialize=False),
-        ),
-        migrations.AlterField(
-            model_name='delivery',
-            name='d_id',
-            field=models.AutoField(default=1, help_text='Код доставки', primary_key=True, serialize=False),
-        ),
+        )
+
     ]

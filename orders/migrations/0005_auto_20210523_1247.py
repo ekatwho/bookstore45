@@ -19,9 +19,4 @@ class Migration(migrations.Migration):
                 ('d_price', models.DecimalField(decimal_places=2, max_digits=10)),
             ],
         ),
-        migrations.AddField(
-            model_name='order',
-            name='d_id',
-            field=models.ForeignKey(default=1, help_text='Код доставки', on_delete=django.db.models.deletion.CASCADE, to='orders.delivery'),
-        ),
     ]

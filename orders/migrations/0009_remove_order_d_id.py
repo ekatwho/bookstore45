@@ -9,9 +9,4 @@ class Migration(migrations.Migration):
         ('orders', '0008_auto_20210523_1252'),
     ]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='order',
-            name='d_id',
-        ),
-    ]
+

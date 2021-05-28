@@ -50,44 +50,5 @@ class Migration(migrations.Migration):
             model_name='orderitem',
             name='product',
         ),
-        migrations.AddField(
-            model_name='order',
-            name='d_id',
-            field=models.ForeignKey(default='', help_text='Код доставки', on_delete=django.db.models.deletion.CASCADE, to='orders.delivery'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='order',
-            name='p_id',
-            field=models.ForeignKey(default='', help_text='Код оплаты', on_delete=django.db.models.deletion.CASCADE, to='orders.payment'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='order',
-            name='user',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='account.profile'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='orderitem',
-            name='id',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='shop.product'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='orderitem',
-            name='o_id',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='orders.order'),
-            preserve_default=False,
-        ),
-        migrations.AlterField(
-            model_name='delivery',
-            name='d_id',
-            field=models.AutoField(default=1, help_text='Код доставки', primary_key=True, serialize=False),
-        ),
-        migrations.AlterField(
-            model_name='payment',
-            name='p_id',
-            field=models.AutoField(default=1, help_text='Код доставки', primary_key=True, serialize=False),
-        ),
+
     ]

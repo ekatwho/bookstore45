@@ -12,20 +12,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='orderitem',
-            name='paid',
-        ),
-        migrations.AddField(
-            model_name='orderitem',
-            name='order',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, related_name='items', to='orders.order'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='orderitem',
-            name='product',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, related_name='order_items', to='shop.product'),
-            preserve_default=False,
-        ),
+
     ]

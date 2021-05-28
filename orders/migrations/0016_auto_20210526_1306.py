@@ -10,28 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameField(
-            model_name='orderitem',
-            old_name='o_id',
-            new_name='paid',
-        ),
-        migrations.RemoveField(
-            model_name='order',
-            name='o_id',
-        ),
-        migrations.RemoveField(
-            model_name='orderitem',
-            name='oi_id',
-        ),
-        migrations.AddField(
-            model_name='order',
-            name='id',
-            field=models.AutoField(auto_created=True, default='', primary_key=True, serialize=False, verbose_name='ID'),
-            preserve_default=False,
-        ),
-        migrations.AlterField(
-            model_name='orderitem',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
-        ),
+
+
     ]

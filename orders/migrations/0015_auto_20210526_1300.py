@@ -17,22 +17,5 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='payment',
             name='p_id',
-        ),
-        migrations.AddField(
-            model_name='delivery',
-            name='id',
-            field=models.AutoField(auto_created=True, default='', primary_key=True, serialize=False, verbose_name='ID'),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='payment',
-            name='id',
-            field=models.AutoField(auto_created=True, default='', primary_key=True, serialize=False, verbose_name='ID'),
-            preserve_default=False,
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='o_id',
-            field=models.AutoField(help_text='Код Заказа', primary_key=True, serialize=False),
-        ),
+        )
     ]
