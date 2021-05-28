@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Регистрация</h1>
+  <h1>Оформление заказа</h1>
 
-  <div class="order-info">
-    <h3>Ваш заказ</h3>
+  <div class="order-info" style="color: black; background-color: white">
+    <h3 style="color: black; background-color: white">Ваш заказ</h3>
     <ul>
       {% for item in cart %}
         <li>
@@ -22,7 +22,16 @@
 
   <form action="." method="post" class="order-form">
     {{ form.as_p }}
-    <p><input type="submit" value="Зарегистрироваться"></p>
+    <p href=""><input type="submit" value="Оформить заказ"></p>
     {% csrf_token %}
   </form>
+<div style="margin-left: 400px; margin-right: 400px; background-color: white; padding: 20px;">
+  <h3><p>Оплата</p></h3>
+  <p><input type="radio"> Наличными
+  <p><input type="radio"> Банковской картой
+  <h3><p>Доставка</p></h3>
+  <p><input type="radio"> Самовывоз
+  <p><input type="radio"> Быстрая доставка - 250р.
+  <p><input type="radio"> Срочная доставка - 350р.
+</div>
 {% endblock %}
