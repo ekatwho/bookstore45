@@ -89,6 +89,8 @@ tbody tr:nth-child(odd) {
 
 tbody tr.subtotal {
     background: #ccc;
+    color: black;
+
 }
 
 thead th, tbody tr.total {
