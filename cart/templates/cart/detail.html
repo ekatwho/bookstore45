@@ -7,18 +7,18 @@
 
 {% block content %}
   <h1>Корзина</h1>
-  <table class="cart">
+  <table class="cart" style="margin-top: 20px">
     <thead>
       <tr>
-        <th>Изображение</th>
-        <th>Книга</th>
-        <th>Количество</th>
-        <th>Удалить</th>
-        <th>Цена за единицу</th>
-        <th>Итого</th>
+        <th style="background-color: #D4AB7D; color: white">Изображение</th>
+        <th style="background-color: #D4AB7D; color: white">Книга</th>
+        <th style="background-color: #D4AB7D; color: white">Количество</th>
+        <th style="background-color: #D4AB7D; color: white">Удалить</th>
+        <th style="background-color: #D4AB7D; color: white">Цена за единицу</th>
+        <th style="background-color: #D4AB7D; color: white">Итого</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="background-color: white">
       {% for item in cart %}
         {% with product=item.product %}
           <tr>
@@ -27,22 +27,22 @@
                 <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
               </a>
             </td>
-            <td>{{ product.name }}</td>
-            <td>
+            <td style="background-color: white; color: black">{{ product.name }}</td>
+            <td style="background-color: white; color: black">
               <form action="{% url 'cart:cart_add' product.id %}" method="post">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.update }}
-                <input type="submit" value="Update">
+                <input type="submit" value="шт.">
                 {% csrf_token %}
               </form>
             </td>
-            <td><a href="{% url 'cart:cart_remove' product.id %}">Удалить</a></td>
-            <td class="num">${{ item.price }}</td>
-            <td class="num">${{ item.total_price }}</td>
+            <td  style="background-color: white; color: black"><a href="{% url 'cart:cart_remove' product.id %}">Удалить</a></td>
+            <td  style="background-color: white; color: black" class="num">{{ item.price }}&nbspруб</td>
+            <td  style="background-color: white; color: black" class="num">{{ item.total_price }}&nbspруб</td>
           </tr>
         {% endwith %}
       {% endfor %}
-      <tr class="total">
+      <tr class="total"  style="background-color: #D4AB7D; color: white">
         <td>Итого</td>
         <td colspan="4"></td>
         <td class="num">Руб&nbsp{{ cart.get_total_price }}</td>
@@ -51,8 +51,6 @@
   </table>
   <p class="text-right">
     <a href="{% url 'shop:product_list' %}" class="button light">Перейти в каталог</a>
-    <a href="{% url 'orders:order_create' %}" class="button">
-      Оплатить
-    </a>
+    <a href="{% url 'orders:order_create' %}" class="button">Оплатить</a>
   </p>
 {% endblock %}
