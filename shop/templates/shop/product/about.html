@@ -7,22 +7,18 @@
 </head>
 <body>
 <div id="header" align="center">
-    <a href="/">
-<!--        <img src="media\products\2021\05\03\7.png" height="100" width="120" align="center">-->
-        <img src="{% static 'img/7.png' %}" height="100" width="120" align="center">
-    </a>
+    <img src="media\products\2021\05\03\7.png" height="100" width="120" align="center">
     <a href="/" class="logo">Главная</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <a class="logo" href="">Доставка и оплата</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <a class="logo" href="">О нас</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<!--    <a class="logo" href="">Регистрация</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
-    <a class="logo" class="cart" style="color:white" href="{% url 'cart:cart_detail' %}">
+    <a class="logo" class="cart" style="color:white">
         <!--       id="subheader"-->
         {% with total_items=cart|length %}
         {% if cart|length > 0 %}
         В корзине:
-        <a href="{% url 'cart:cart_detail' %}" style="color:white">
-            {{ total_items }} {{ total_items|pluralize }},
-            {{ cart.get_total_price }}&nbspруб
+        <a href="{% url 'cart:cart_detail' %}">
+            {{ total_items }} item{{ total_items|pluralize }},
+            ${{ cart.get_total_price }}
         </a>
         {% else %}
         Корзина&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -32,6 +28,13 @@
 </div>
 <div id="content">
     {% block content %}
+    <div class="product-detail" >
+        <h2><p>Связь с нами</p></h2>
+        <p>Номер телефона: 8 (800) 555 35 35</p>
+        <p>e-mail: bookshelf@mail.ru</p>
+        <p>Адрес: Барнаул, ул. Ленина 76</p>
+        <p><img src="{% static 'img/map.jpg' %}" height="400" width="120" align="center"></p>
+        </div>
     {% endblock %}
 </div>
 <table>
