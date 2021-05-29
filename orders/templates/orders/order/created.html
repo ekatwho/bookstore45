@@ -1,16 +1,19 @@
 {% extends "shop/base.html" %}
-
-{% block title %}
-  Thank you
-{% endblock %}
-
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Книжный магазин "Книжная полка"{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
 {% block content %}
-  <h1>Спасибо</h1>
+<div id="content" style="background-color:white; padding: 80px">
+<h1>Спасибо</h1>
   <p>Ваш заказ был успешно выполнен. Ваш номер заказа
     <strong>
     {{ order.id }}
   </strong>.</p>
+</div>
 {% endblock %}
-
 
 
