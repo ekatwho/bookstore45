@@ -11,9 +11,10 @@
 <!--        <img src="media\products\2021\05\03\7.png" height="100" width="120" align="center">-->
         <img src="{% static 'img/7.png' %}" height="100" width="120" align="center">
     </a>
-    <a href="/" class="logo">Главная</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a class="logo" href="{% url 'shop:delivery' %}">Доставка и оплата</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a class="logo" href="{% url 'shop:about' %}">О нас</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="/" class="logo">Главная</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class="logo" href="{% url 'shop:delivery' %}">Доставка и оплата</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class="logo" href="{% url 'shop:about' %}">О нас</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class="logo" href="{% url 'account:login' %}">Вход</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <a class="logo" class="cart" style="color:white" href="{% url 'cart:cart_detail' %}">
         <!--       id="subheader"-->
         {% with total_items=cart|length %}
@@ -30,8 +31,7 @@
         {% endif %}
         {% endwith %}
     </a>
-    <div align="left"><a class="logo" style="background-color: #D4AB7D; color: white; margin-left:175px; padding: 0px" href="{% url 'account:register' %}">Вход</a></div>
-    <div>&nbsp</div>
+
 </div>
 <div id="content">
     {% block content %}

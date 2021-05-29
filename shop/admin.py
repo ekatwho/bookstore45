@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'stock', 'available', 'created', 'updated']
+    list_display = ['id', 'name', 'category', 'slug', 'price', 'stock', 'available', 'v_id']
     list_filter = ['available', 'created', 'updated']
     list_editable = ['price', 'available']
     prepopulated_fields = {'slug': ('name',)}
@@ -28,5 +28,5 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Vendor)
 class VendorAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'city', 'phone', 'email']
+    list_display = ['v_id', 'name', 'city', 'phone', 'email']
 
